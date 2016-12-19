@@ -1,0 +1,25 @@
+{
+  "name": "docker_node_app",
+  "version": "0.0.1",
+  "description": "Testing docker container with node",
+  "author": "Ghostanza",
+  "main": "server.js",
+  "private": true,
+  "scripts": {
+    "start": "./node_modules/.bin/nodemon server.js"
+  },
+  "dependencies": {
+    "body-parser": "~1.15.2",
+    "cookie-parser": "~1.4.3",
+    "debug": "~2.2.0",
+    "dotenv": "^2.0.0",
+    "express": "~4.14.0",
+    "express-session": "^1.14.2",
+    "hbs": "^4.0.1",
+    "morgan": "~1.7.0",
+    "node-sass-middleware": "0.9.8"
+  },
+  "devDependencies": {
+    "nodemon": "^1.11.0"
+  }
+}
