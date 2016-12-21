@@ -5,8 +5,7 @@ module.exports = (app, db) => {
 	
 	app.get('/home/:name', (req, res) => {
 		var nameExists = ( name ) => { return db.getAsync(name) },
-			setName = ( name ) => { return db.setAsync( 'name', name ) },
-			username = req.params.name ? (req.params.name[0].toUpperCase() + req.params.name.substring(1)) : 'noname';
+			setName = ( name ) => { return db.setAsync( 'name', name ) };
 		
 		nameExists('name').then( 
 			(name_exists) => { 
