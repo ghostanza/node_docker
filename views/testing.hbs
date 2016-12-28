@@ -1,5 +1,12 @@
 <h1>^^this.message^^</h1>
 <ul v-if="stuff">
-	<li v-for="item in stuff"><span>^^item.title^^</span><img :src="item.image" style="width: 240px"/></li>
+	<li v-for="item in stuff"><span>^^item.title^^</span><img :src="item.image" style="height: 20%;"/></li>
 </ul>
-<btn v-for="type in types" :apikey='key' @newlookup="newheader" @update="update" :type="type.lookup">^^type.name^^</btn>
+<p>^^this.searchterm^^</p>
+<search :term="searchterm" v-model="searchterm"></search>
+
+
+<form @submit.prevent="search(searchterm)">
+<input type='text' v-model="searchterm"/>
+</form>
+<btn v-if="show.buttons" v-for="type in types" @newlookup="newheader" @update="update" :type="type">^^type.name^^</btn>

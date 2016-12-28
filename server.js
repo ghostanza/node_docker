@@ -1,6 +1,6 @@
 'use strict';
 
-//require('dotenv').config();
+require('dotenv').config();
 
 const express = require('express');
 const PORT = 8080;
@@ -28,7 +28,7 @@ app.set('view engine', 'hbs');
 app.use('/public',express.static(path.join(__dirname, 'public')));
 
 require('./routes/index')(app, db);
-app.get('/favicon.ico', (req, res) => { res.send(200); } );
+app.get('/favicon.ico', (req, res) => { res.sendStatus(200); } );
 
 app.listen(PORT);
 console.log(`App is running on port ${PORT}`);
