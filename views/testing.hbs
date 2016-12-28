@@ -1,0 +1,5 @@
+<h1>^^this.message^^</h1>
+<ul v-if="stuff">
+	<li v-for="item in stuff"><span>^^item.title^^</span><img :src="item.image" style="width: 240px"/></li>
+</ul>
+<btn v-for="type in types" :apikey='key' @newlookup="newheader" @update="update" :type="type.lookup">^^type.name^^</btn>
