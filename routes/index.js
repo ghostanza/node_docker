@@ -8,7 +8,7 @@ module.exports = (app, db) => {
 	app.get('/lookup/:lookup', (req, res) => { 
 		var lookup = req.params.lookup ? req.params.lookup : 'shudder',
 			options = {
-				url: `https://api-public.guidebox.com/v1.43/US/9Rljr5EAozeKjGRZgoXtyWJ9f5Sfor/movies/all/0/10/${lookup}`,
+				url: `https://api-public.guidebox.com/v1.43/US/${process.env.GUIDEBOX_API}/movies/all/0/10/${lookup}`,
 				header: {'Content-Type' : 'application/json'}};
 		request.get(options, (e, r, b) => {
 			var results = JSON.parse(b);
